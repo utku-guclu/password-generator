@@ -35,6 +35,13 @@ const passPool = numbers.concat(alphabetExtend).concat(symbols);
 button.addEventListener("click", () => {
   Array.from(buttons).forEach((button) => {
     button.textContent = generatePass();
+    button.addEventListener("click", () => {
+      // copy
+      navigator.clipboard.writeText(button.textContent);
+      alert.classList.add("green");
+      alert.classList.remove("red");
+      alert.textContent = "pass is copied!";
+    });
   });
 });
 
@@ -49,6 +56,7 @@ function generatePass() {
   //generate pass
   let pass = "";
   if (DIGIT < 6) {
+    alert.classList.add("red");
     let message = "Minimum pass length is 6";
     alert.textContent = message;
   } else {

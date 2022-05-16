@@ -73,7 +73,19 @@ button {
     background-color: var(--blue);
 }
 
+.button:hover,
+button:hover {
+    cursor: pointer;
+}
+
 p {
     align-self: flex-end;
+}
+
+.green {
+    color: #55F991;
+}
+
+.red {
     color: rgb(250, 132, 132);
 }
